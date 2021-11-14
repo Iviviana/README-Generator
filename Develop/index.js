@@ -1,11 +1,12 @@
 // TODO: Include packages needed for this application
 var inquirer = require('inquirer');
-const generateMarkdown=require('./utils/generateMarkdown.js');
-const util = require('./package.json');
+const generateMarkdown=require('./utils/generateMarkdown')
+const util=require('util');
 const fs =require('fs');
+const writeFileAsync=util.promisify(fs.writeFile);
 
-inquirer
-  .prompt([
+
+  const questions=[
     /* Pass your questions in here */
     {
       type: 'input',
@@ -119,24 +120,24 @@ inquirer
         }
       }
     }
-  ])
-  .then((answers) => {
-    // Use user feedback for... whatever!!
-    console.log(answers)
-  })
-  .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-      console.error(error);
-    } else {
-      // Something else went wrong
-      console.log('Something went wrong.')
-    }
-  });
+  ]
+  // .then((answers) => {
+  //   // Use user feedback for... whatever!!
+  //   console.log(answers)
+  // })
+  // .catch((error) => {
+  //   if (error.isTtyError) {
+  //     // Prompt couldn't be rendered in the current environment
+  //     console.error(error);
+  //   } else {
+  //     // Something else went wrong
+  //     console.log('Something went wrong.')
+  //   }
+  // });
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile(`./dist/README.md`,data, err => {
+  fs.writeFile("./dist/${fileName}",data, err => {
     if (err) {
       throw err
     };
@@ -156,3 +157,17 @@ init()
   .catch(err => {
     console.log(err);
   });
+
+// async function init() {
+//   try {
+//     // Ask user questions and generate responses
+//     const answers =await promptQuestions();
+//     const generateBody=generateMarkdown(answers);
+//     //Write README to dis directory
+//     await writeFileAsync("./dist/README.md", generateBody);
+//     console.log('Successfully wrote to README.md');
+//   } catch(err) {
+//     console.log(err);
+//   }
+// }
+// init();
