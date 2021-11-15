@@ -3,7 +3,9 @@ var inquirer = require('inquirer');
 const generateMarkdown=require('./utils/generateMarkdown')
 const util=require('util');
 const fs =require('fs');
-const writeFileAsync=util.promisify(fs.writeFile);
+const path=require('path');
+//const writeFileAsync=util.promisify(fs.writeFile);
+
 
 
   const questions=[
@@ -137,12 +139,7 @@ const writeFileAsync=util.promisify(fs.writeFile);
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile("./dist/${fileName}",data, err => {
-    if (err) {
-      throw err
-    };
-    console.log('README created!')
-  });
+  return fs.writeFileSync(path.join(process.cwd(),fileName), data)
 };
 
 // TODO: Create a function to initialize app
@@ -153,6 +150,7 @@ function init() {
 // Function call to initialize app
 init()
   .then(answers => generateMarkdown(answers))
+  //'README.md' is the fileName and the generatedReadme is the data as show in function writeToFile
   .then(generatedReadme => writeToFile('README.md', generatedReadme))
   .catch(err => {
     console.log(err);
