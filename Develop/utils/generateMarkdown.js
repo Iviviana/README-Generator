@@ -18,9 +18,13 @@ function generateMarkdown(answers) {
 
   ## Table of Contents
   -[Description](#description)
+
   -[Installation](#installation)
+
   -[Usage](#usage)
+
   -[Credits](#credit)
+  
   -[License](#license)
 
   ## Installation
