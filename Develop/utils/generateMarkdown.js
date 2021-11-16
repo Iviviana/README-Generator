@@ -28,7 +28,7 @@ function generateMarkdown(answers) {
   -[License](#license)
 
   ## Installation
-  ${answers.installation}
+  ${answers.installation} ${answers.github}
 
   ## Usage
   ${answers.usage}
