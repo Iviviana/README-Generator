@@ -5,18 +5,18 @@
   This application helps users create their README.md file by asking a series of questions that will outline the requirements of a good README.md .
 
   ## Table of Contents
-  *[Description](#description)
+  * [Description](#description)
 
-  *[Installation](#installation)
+  * [Installation](#installation)
 
-  *[Usage](#usage)
+  * [Usage](#usage)
 
-  *[Credits](#credit)
+  * [Credits](#credit)
   
-  *[License](#license)
+  * [License](#license)
 
   ## Installation
-  To install and use this application, the Node Challenge file will be necessary along with [node.js](https://nodejs.org/en/) and [inquirer](https://www.npmjs.com/package/inquirer).
+  To install and use this application, the Node Challenge file will be necessary along with [node.js](https://nodejs.org/en/) and [inquirer](https://www.npmjs.com/package/inquirer). The node challenge file can be obtained from my GitHub repository
 
   ## Usage
   To use this application, the user must run the index.js file using node.js. The user will then be prompted by a series of questions that must be answered.
