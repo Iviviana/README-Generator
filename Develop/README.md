@@ -2,7 +2,7 @@
   <h1>ReadMe Generator</h1>
 
   ## Description
-  This application helps users create their README.md file by asking a series of questions that will outline the requirements of a good README. 
+  This application helps users create their README.md file by asking a series of questions that will outline the requirements of a good README. By answering the prompted questions, the user will, when finished, have a README file that will be presentable for others to read to understand their project.
 
   ## User Story
 
